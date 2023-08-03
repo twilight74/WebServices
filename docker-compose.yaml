@@ -1,0 +1,29 @@
+version: '3'
+services:
+  django:
+    build:
+      context: ./djangoSimpleWebService
+      dockerfile: Dockerfile
+    networks:
+      - mynetwork
+  flask:
+    build:
+      context: ./fastApiSimpleWebService
+      dockerfile: Dockerfile
+    networks:
+      - mynetwork
+  fastapi:
+    build:
+      context: ./flaskSimpleWebService
+      dockerfile: Dockerfile
+    networks:
+      - mynetwork
+  test:
+    build:
+      context: ./testRe
+      dockerfile: Dockerfile
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+      
