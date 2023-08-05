@@ -68,15 +68,26 @@ you should install docker on your system, you can do that by this link:
 
 For both methods, you must first download the project on your system
 
-1. Clone the repo
+.. Clone the repo
    ```sh
-   git clone 
+   git clone https://github.com/twilight74/WebServices.git
    ```
-3. Install NPM packages
+#### Method number one
+
+ Build containers one by one from docker files and see the result
+
+1. Enter the djangoSimpleWebService and create the Django image with the following command
+  ```sh
+    sudo docker build --tag django .
+
+   ```
+
+2.  Then you go back to the main folder of the program and enter flaskSimpleWebService and create the Flask website with the following command
    ```sh
-   npm install
+   sudo docker build --tag flask .
    ```
-4. Enter your API in `config.js`
+
+3. Enter your API in `config.js`
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
